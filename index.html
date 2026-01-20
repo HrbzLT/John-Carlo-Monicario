@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIL Project: Sources of Information</title>
+    <title>MIL Insights | Sources of Information</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3a6ea5;
-            --secondary: #ff9f1c;
-            --accent: #e63946;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #1a252f;
+            --gray-color: #7f8c8d;
+            --spacing-unit: 20px;
+            --max-width: 1200px;
+            --border-radius: 4px;
+            --transition-speed: 0.3s;
         }
         
         * {
@@ -23,338 +26,314 @@
         }
         
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: #f0f7ff;
-            background-image: linear-gradient(to bottom, #e6f2ff, #ffffff 100px);
+            color: var(--dark-color);
+            background-color: #f9f9f9;
             min-height: 100vh;
         }
         
         h1, h2, h3, h4 {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
+            font-weight: 600;
+            line-height: 1.3;
             margin-bottom: 1rem;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        p {
+            margin-bottom: 1.5rem;
         }
         
-        /* Header - Student Project Style */
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color var(--transition-speed);
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+        
+        /* Header */
         header {
-            background-color: var(--primary);
-            color: white;
-            padding: 15px 0;
-            border-bottom: 5px solid var(--secondary);
-            box-shadow: var(--shadow);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            padding: var(--spacing-unit) 0;
         }
         
         .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
             display: flex;
             align-items: center;
         }
         
         .logo i {
-            font-size: 2.2rem;
             margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .logo-text h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        
-        .logo-text p {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            color: var(--secondary-color);
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
-            flex-wrap: wrap;
         }
         
         .nav-menu li {
-            margin-left: 15px;
+            margin-left: 2rem;
         }
         
         .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: all 0.3s;
+            color: var(--dark-color);
+            font-weight: 500;
         }
         
         .nav-menu a:hover {
-            background-color: var(--secondary);
-            color: var(--dark);
+            color: var(--secondary-color);
         }
         
         /* Hero Section */
         .hero {
-            padding: 60px 0;
+            padding: 4rem 0;
             text-align: center;
+            background-color: white;
+            border-bottom: 1px solid #eee;
         }
         
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
         
         .hero p {
             font-size: 1.2rem;
+            color: var(--gray-color);
             max-width: 800px;
-            margin: 0 auto 30px;
-            color: #555;
+            margin: 0 auto 2rem;
         }
         
-        /* Content Sections */
-        .section {
-            padding: 30px 0;
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: background-color var(--transition-speed);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        /* Main Content */
+        .content-section {
+            padding: 4rem 0;
         }
         
         .section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--secondary);
-        }
-        
-        .section-title i {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-right: 15px;
-        }
-        
-        /* Source Cards - Handmade look */
-        .source-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border-left: 5px solid var(--primary);
-            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
             position: relative;
         }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
         }
         
-        .card-header {
-            background-color: var(--primary);
-            color: white;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .card-header i {
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        .card-body h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .card-body ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .card-body li {
-            margin-bottom: 5px;
-        }
-        
-        .example-box {
-            background-color: #f0f8ff;
-            border-left: 3px solid var(--secondary);
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-top: 15px;
-        }
-        
-        /* Evaluation Section */
-        .evaluation-criteria {
+        /* Source Types */
+        .source-types {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .source-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .source-icon {
+            background-color: var(--light-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+        }
+        
+        .source-content {
+            padding: 2rem;
+        }
+        
+        .source-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Evaluation Criteria */
+        .criteria-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .criteria-list {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
         }
         
         .criterion {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            border-top: 4px solid var(--accent);
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .criterion:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
         
         .criterion-number {
-            display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--secondary-color);
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        
-        /* Student Notes */
-        .student-notes {
-            background-color: #fff;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .student-notes:before {
-            content: "Student Notes";
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background-color: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
-        /* Importance Section */
-        .importance-list {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-        
-        .importance-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
         }
         
-        .importance-item i {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-right: 15px;
-            margin-top: 3px;
-        }
-        
-        /* Footer - Student Project Style */
-        footer {
-            background-color: var(--dark);
+        /* Student Project Footer */
+        .student-project-footer {
+            background-color: var(--dark-color);
             color: white;
-            padding: 25px 0;
-            margin-top: 40px;
+            padding: 3rem 0;
             text-align: center;
-            border-top: 5px solid var(--secondary);
         }
         
         .student-info {
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
         }
         
-        .student-info h4 {
-            color: var(--secondary);
+        .student-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
         }
         
-        .project-details {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 10px;
+        .student-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
         
-        /* Responsive Design */
+        .detail-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            min-width: 200px;
+        }
+        
+        .detail-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .project-purpose {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                text-align: center;
+                padding: 1rem 0;
             }
             
             .logo {
-                justify-content: center;
-                margin-bottom: 15px;
+                margin-bottom: 1rem;
             }
             
             .nav-menu {
                 justify-content: center;
-                margin-top: 10px;
             }
             
             .nav-menu li {
-                margin: 0 5px;
+                margin: 0 1rem;
             }
             
-            .hero h2 {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 2.2rem;
             }
-        }
-        
-        /* Student touches */
-        .hand-drawn {
-            border-radius: 10px 10px 10px 10px;
-        }
-        
-        .highlight {
-            background-color: #fffacd;
-            padding: 3px 5px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        
-        .quote {
-            font-style: italic;
-            border-left: 4px solid var(--secondary);
-            padding-left: 15px;
-            margin: 20px 0;
-            color: #555;
-        }
-        
-        /* Simple animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .student-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .detail-item {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -365,15 +344,12 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-info-circle"></i>
-                    <div class="logo-text">
-                        <h1>MIL Project</h1>
-                        <p>Sources of Information</p>
-                    </div>
+                    MIL Insights
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#sources"><i class="fas fa-book"></i> Sources</a></li>
-                    <li><a href="#evaluation"><i class="fas fa-check-circle"></i> Evaluation</a></li>
-                    <li><a href="#importance"><i class="fas fa-star"></i> Importance</a></li>
+                    <li><a href="#sources">Sources</a></li>
+                    <li><a href="#evaluation">Evaluation</a></li>
+                    <li><a href="#importance">Importance</a></li>
                 </ul>
             </div>
         </div>
@@ -382,313 +358,226 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2 class="fade-in">Understanding Information Sources</h2>
-            <p class="fade-in">In today's digital world, we encounter information from countless sources. Learning to identify and evaluate these sources is a crucial skill for students and everyone else!</p>
+            <h1>Sources of Information in Media Literacy</h1>
+            <p>Understanding where information comes from is essential for critical thinking, informed decision-making, and navigating today's complex media landscape.</p>
+            <a href="#sources" class="btn">Explore Sources</a>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="container">
+    <main>
         <!-- Source Types -->
-        <section class="section" id="sources">
-            <div class="section-title">
-                <i class="fas fa-search"></i>
-                <h2>Types of Information Sources</h2>
-            </div>
-            
-            <p>Information comes in different forms. Knowing what type of source you're looking at helps you understand how to use it properly.</p>
-            
-            <div class="source-cards">
-                <!-- Primary Sources Card -->
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Primary Sources</h3>
-                    </div>
-                    <div class="card-body">
-                        <h4>Original, Firsthand Information</h4>
-                        <p>These are created at the time of an event or very soon after. They haven't been interpreted or analyzed by anyone else.</p>
-                        
-                        <ul>
-                            <li>Diaries, letters, emails</li>
-                            <li>Photographs, videos, audio recordings</li>
-                            <li>Original research data and surveys</li>
-                            <li>Interviews, speeches, oral histories</li>
-                            <li>Legal documents, official records</li>
-                        </ul>
-                        
-                        <div class="example-box">
-                            <strong>Example:</strong> A scientist's lab notebook, a video of a protest, census data, a presidential speech.
+        <section class="content-section" id="sources">
+            <div class="container">
+                <h2 class="section-title">Types of Information Sources</h2>
+                <div class="source-types">
+                    <div class="source-card">
+                        <div class="source-icon">
+                            <i class="fas fa-newspaper"></i>
                         </div>
-                        
-                        <p class="highlight">Tip: Primary sources are great for getting unfiltered information, but they might need context to fully understand.</p>
+                        <div class="source-content">
+                            <h3>Primary Sources</h3>
+                            <p>Original, unfiltered information created at the time of an event. Includes diaries, photographs, original research data, interviews, and legal documents.</p>
+                            <p><strong>Example:</strong> Historical documents, scientific research papers, eyewitness accounts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="source-content">
+                            <h3>Secondary Sources</h3>
+                            <p>Information that analyzes, interprets, or summarizes primary sources. Provides context and commentary on original information.</p>
+                            <p><strong>Example:</strong> Textbooks, review articles, biographies, documentaries about historical events.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="source-content">
+                            <h3>Tertiary Sources</h3>
+                            <p>Collections of primary and secondary sources, organized for easy access. These provide overviews and summaries of topics.</p>
+                            <p><strong>Example:</strong> Encyclopedias, almanacs, bibliographies, directories, most websites.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Secondary Sources Card -->
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Secondary Sources</h3>
-                    </div>
-                    <div class="card-body">
-                        <h4>Analysis and Interpretation</h4>
-                        <p>These sources analyze, interpret, or summarize primary sources. They're one step removed from the original information.</p>
-                        
-                        <ul>
-                            <li>Textbooks and reference books</li>
-                            <li>Biographies and histories</li>
-                            <li>Documentaries</li>
-                            <li>Review articles and literary criticism</li>
-                            <li>Most news articles (analysis pieces)</li>
-                        </ul>
-                        
-                        <div class="example-box">
-                            <strong>Example:</strong> A history textbook, a documentary about World War II, a book review, an analysis of climate change data.
-                        </div>
-                        
-                        <p class="highlight">Tip: Secondary sources help us understand primary sources better by providing context and expert analysis.</p>
-                    </div>
-                </div>
-                
-                <!-- Tertiary Sources Card -->
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <i class="fas fa-database"></i>
-                        <h3>Tertiary Sources</h3>
-                    </div>
-                    <div class="card-body">
-                        <h4>Collections and Summaries</h4>
-                        <p>These organize and compile primary and secondary sources. They're great for getting an overview or finding other sources.</p>
-                        
-                        <ul>
-                            <li>Encyclopedias and almanacs</li>
-                            <li>Bibliographies and indexes</li>
-                            <li>Directories and guidebooks</li>
-                            <li>Most websites (like Wikipedia)</li>
-                            <li>Textbooks that summarize many topics</li>
-                        </ul>
-                        
-                        <div class="example-box">
-                            <strong>Example:</strong> Wikipedia, Britannica Encyclopedia, a bibliography of books about space exploration, a travel guidebook.
-                        </div>
-                        
-                        <p class="highlight">Tip: Tertiary sources are good starting points for research but usually shouldn't be your only source.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="student-notes">
-                <h4>My Thoughts on Source Types:</h4>
-                <p>I used to think all information online was the same, but now I understand that different sources serve different purposes. For my school research projects, I try to use a mix of primary and secondary sources to get both original information and expert analysis.</p>
-                <p>Wikipedia (a tertiary source) is a good place to start research, but I shouldn't cite it directly in my papers. Instead, I use it to find the primary and secondary sources listed in the references.</p>
             </div>
         </section>
 
         <!-- Evaluation Criteria -->
-        <section class="section" id="evaluation">
-            <div class="section-title">
-                <i class="fas fa-clipboard-check"></i>
-                <h2>How to Evaluate Sources</h2>
-            </div>
-            
-            <p>Just because information exists doesn't mean it's reliable! Use these criteria to evaluate any source you encounter.</p>
-            
-            <div class="evaluation-criteria">
-                <!-- Criterion 1 -->
-                <div class="criterion fade-in">
-                    <div class="criterion-number">1</div>
-                    <h3>Authority</h3>
-                    <p>Who created this? Are they qualified? Check the author's credentials and the publisher's reputation.</p>
-                    <p><strong>Ask:</strong> Is this person/organization an expert on this topic?</p>
+        <section class="content-section" id="evaluation">
+            <div class="container">
+                <h2 class="section-title">Evaluating Information Sources</h2>
+                <div class="criteria-container">
+                    <div class="criteria-list">
+                        <div class="criterion">
+                            <div class="criterion-number">1</div>
+                            <div>
+                                <h3>Authority</h3>
+                                <p>Who is the author or creator? What are their credentials? Are they qualified to write on this topic? Is the source published by a reputable organization?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criterion">
+                            <div class="criterion-number">2</div>
+                            <div>
+                                <h3>Accuracy</h3>
+                                <p>Is the information reliable and correct? Can it be verified through other sources? Are there spelling or grammatical errors? Is data properly cited?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criterion">
+                            <div class="criterion-number">3</div>
+                            <div>
+                                <h3>Currency</h3>
+                                <p>When was the information published or last updated? Is the information current enough for your topic? For web sources, are links functional?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criterion">
+                            <div class="criterion-number">4</div>
+                            <div>
+                                <h3>Purpose</h3>
+                                <p>Why was this information created? To inform, persuade, sell, or entertain? Is there evidence of bias? Is the information fact, opinion, or propaganda?</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Criterion 2 -->
-                <div class="criterion fade-in">
-                    <div class="criterion-number">2</div>
-                    <h3>Accuracy</h3>
-                    <p>Is the information correct? Can you verify it with other sources? Look for citations and evidence.</p>
-                    <p><strong>Ask:</strong> Can I find this same information in other reliable sources?</p>
-                </div>
-                
-                <!-- Criterion 3 -->
-                <div class="criterion fade-in">
-                    <div class="criterion-number">3</div>
-                    <h3>Currency</h3>
-                    <p>When was this created or updated? Some information needs to be current (like technology or medicine).</p>
-                    <p><strong>Ask:</strong> Is this information recent enough for my needs?</p>
-                </div>
-                
-                <!-- Criterion 4 -->
-                <div class="criterion fade-in">
-                    <div class="criterion-number">4</div>
-                    <h3>Purpose</h3>
-                    <p>Why was this created? To inform, persuade, sell, or entertain? Watch for bias and hidden agendas.</p>
-                    <p><strong>Ask:</strong> What is the goal of this information?</p>
-                </div>
-            </div>
-            
-            <div class="student-notes">
-                <h4>My Evaluation Strategy:</h4>
-                <p>When I'm researching online, I use the "ABC" method I learned in class: <span class="highlight">A</span>uthority, <span class="highlight">B</span>ias, and <span class="highlight">C</span>urrency. I also check the website domain - .edu and .gov sites are usually more reliable than .com sites for factual information.</p>
-                <p>For social media posts, I always ask: Who shared this? Why might they be sharing it? Can I find this information on trustworthy news sites?</p>
             </div>
         </section>
 
         <!-- Importance Section -->
-        <section class="section" id="importance">
-            <div class="section-title">
-                <i class="fas fa-lightbulb"></i>
-                <h2>Why This Matters</h2>
-            </div>
-            
-            <p>Understanding sources isn't just for school—it's a life skill that affects everything from homework to health decisions to voting.</p>
-            
-            <div class="importance-list">
-                <!-- Importance 1 -->
-                <div class="importance-item fade-in">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <h4>Better Schoolwork</h4>
-                        <p>Using good sources makes your essays and projects more credible and convincing. Teachers can tell when you've done quality research!</p>
-                    </div>
+        <section class="content-section" id="importance">
+            <div class="container">
+                <h2 class="section-title">Why Source Evaluation Matters</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p>In today's digital age, we're constantly bombarded with information from countless sources. The ability to critically evaluate these sources is a fundamental component of media and information literacy.</p>
+                    
+                    <p>Understanding sources helps us:</p>
+                    <ul style="list-style-position: inside; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.5rem;">Distinguish between credible information and misinformation</li>
+                        <li style="margin-bottom: 0.5rem;">Recognize bias and propaganda techniques</li>
+                        <li style="margin-bottom: 0.5rem;">Make informed decisions as citizens and consumers</li>
+                        <li style="margin-bottom: 0.5rem;">Develop critical thinking skills applicable in all areas of life</li>
+                        <li>Participate meaningfully in democratic processes</li>
+                    </ul>
+                    
+                    <p>By learning to identify and evaluate different types of information sources, we become more discerning consumers and creators of media content.</p>
                 </div>
-                
-                <!-- Importance 2 -->
-                <div class="importance-item fade-in">
-                    <i class="fas fa-shield-alt"></i>
-                    <div>
-                        <h4>Avoid Misinformation</h4>
-                        <p>Fake news and conspiracy theories spread quickly online. Knowing how to check sources helps you separate fact from fiction.</p>
-                    </div>
-                </div>
-                
-                <!-- Importance 3 -->
-                <div class="importance-item fade-in">
-                    <i class="fas fa-users"></i>
-                    <div>
-                        <h4>Better Decisions</h4>
-                        <p>From choosing a college to understanding health information, good decisions come from good information.</p>
-                    </div>
-                </div>
-                
-                <!-- Importance 4 -->
-                <div class="importance-item fade-in">
-                    <i class="fas fa-vote-yea"></i>
-                    <div>
-                        <h4>Informed Citizenship</h4>
-                        <p>Democracy needs citizens who can evaluate political claims and make informed voting decisions.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="quote">
-                <p>"In the age of information, ignorance is a choice." - Donny Miller</p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Student Project Footer -->
+    <footer class="student-project-footer">
         <div class="container">
             <div class="student-info">
                 <h3>Media and Information Literacy Project</h3>
-                <h4>Created by: [Student Name]</h4>
-                <p>Grade 12 | MIL Subject | [School Name]</p>
-                <p class="project-details">Submitted to: [Teacher's Name] | Date: [Submission Date]</p>
+                <p>Understanding Sources of Information</p>
+                
+                <div class="student-details">
+                    <div class="detail-item">
+                        <h4>Student Name</h4>
+                        <p>[Your Name Here]</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h4>Grade & Section</h4>
+                        <p>Grade 12 - [Your Section]</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h4>Subject Teacher</h4>
+                        <p>[Teacher's Name]</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h4>Submission Date</h4>
+                        <p id="current-date">[Date will appear here]</p>
+                    </div>
+                </div>
             </div>
             
-            <div style="margin-top: 20px;">
-                <p>This website was created as a school project to demonstrate understanding of Media and Information Literacy concepts.</p>
-                <p style="margin-top: 10px; font-size: 0.9rem;">&copy; [Year] - All information sourced from class materials and reliable educational resources.</p>
+            <div class="project-purpose">
+                <p>This website was created as a school project to demonstrate understanding of Media and Information Literacy concepts, specifically focusing on different types of information sources and how to evaluate them critically.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; <span id="current-year"></span> - All educational content sourced from reliable academic resources.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple fade-in animation on scroll
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation to source cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Animate source cards
+        document.querySelectorAll('.source-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = (index * 0.1) + 's';
+            
+            observer.observe(card);
+        });
+        
+        // Animate criteria items
+        document.querySelectorAll('.criterion').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = (index * 0.1) + 's';
+            
+            observer.observe(item);
+        });
+        
+        // Set current date in footer
         document.addEventListener('DOMContentLoaded', function() {
-            // Add animation to elements with fade-in class
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            // Function to check if element is in viewport
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-            
-            // Function to handle scroll animation
-            function handleScrollAnimation() {
-                fadeElements.forEach(element => {
-                    if (isInViewport(element)) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            }
-            
-            // Set initial state for fade-in elements
-            fadeElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            });
-            
-            // Check on load
-            handleScrollAnimation();
-            
-            // Check on scroll
-            window.addEventListener('scroll', handleScrollAnimation);
-            
-            // Smooth scrolling for navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Add a simple interactive feature
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'scale(1.02)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                });
-            });
-            
-            // Add current date to footer
             const now = new Date();
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const dateString = now.toLocaleDateString('en-US', options);
             
-            // Update placeholder text in footer
-            const dateElement = document.querySelector('.project-details');
+            // Update date in footer
+            const dateElement = document.getElementById('current-date');
             if (dateElement) {
-                dateElement.innerHTML = dateElement.innerHTML.replace('[Submission Date]', dateString);
+                dateElement.textContent = dateString;
             }
             
             // Update year in copyright
-            const yearElement = document.querySelector('footer p:last-child');
+            const yearElement = document.getElementById('current-year');
             if (yearElement) {
-                yearElement.innerHTML = yearElement.innerHTML.replace('[Year]', now.getFullYear());
+                yearElement.textContent = now.getFullYear();
             }
         });
     </script>
