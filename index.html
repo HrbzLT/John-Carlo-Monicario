@@ -104,31 +104,9 @@
             color: var(--dark);
         }
         
-        /* Project Info Banner */
-        .project-info {
-            background-color: #fff9e6;
-            border: 2px dashed var(--secondary);
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .project-info i {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-right: 15px;
-        }
-        
-        .project-info-content h3 {
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
         /* Hero Section */
         .hero {
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
         }
         
@@ -299,47 +277,6 @@
             margin-top: 3px;
         }
         
-        /* Project Resources */
-        .resources {
-            background-color: var(--primary);
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .resources h3 {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .resource-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .resource-btn {
-            display: inline-block;
-            background-color: white;
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid white;
-        }
-        
-        .resource-btn:hover {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            color: var(--dark);
-        }
-        
         /* Footer - Student Project Style */
         footer {
             background-color: var(--dark);
@@ -387,11 +324,6 @@
             
             .hero h2 {
                 font-size: 2rem;
-            }
-            
-            .resource-links {
-                flex-direction: column;
-                align-items: center;
             }
         }
         
@@ -442,32 +374,16 @@
                     <li><a href="#sources"><i class="fas fa-book"></i> Sources</a></li>
                     <li><a href="#evaluation"><i class="fas fa-check-circle"></i> Evaluation</a></li>
                     <li><a href="#importance"><i class="fas fa-star"></i> Importance</a></li>
-                    <li><a href="#resources"><i class="fas fa-download"></i> Resources</a></li>
                 </ul>
             </div>
         </div>
     </header>
-
-    <!-- Project Info Banner -->
-    <div class="container">
-        <div class="project-info fade-in">
-            <i class="fas fa-graduation-cap"></i>
-            <div class="project-info-content">
-                <h3>Media and Information Literacy - Student Project</h3>
-                <p>This website was created as a school project to demonstrate understanding of different sources of information and how to evaluate them critically.</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2 class="fade-in">Understanding Information Sources</h2>
             <p class="fade-in">In today's digital world, we encounter information from countless sources. Learning to identify and evaluate these sources is a crucial skill for students and everyone else!</p>
-            
-            <div class="quote fade-in">
-                <p>"Not everything that is faced can be changed, but nothing can be changed until it is faced." - James Baldwin</p>
-            </div>
         </div>
     </section>
 
@@ -668,23 +584,6 @@
             
             <div class="quote">
                 <p>"In the age of information, ignorance is a choice." - Donny Miller</p>
-            </div>
-        </section>
-
-        <!-- Resources Section -->
-        <section class="section" id="resources">
-            <div class="resources fade-in">
-                <h3>Project Resources & Tools</h3>
-                <p>Here are some helpful tools and resources I used for this project that might help you too!</p>
-                
-                <div class="resource-links">
-                    <a href="#" class="resource-btn"><i class="fas fa-file-pdf"></i> Download Project PDF</a>
-                    <a href="#" class="resource-btn"><i class="fas fa-list-check"></i> Source Evaluation Checklist</a>
-                    <a href="#" class="resource-btn"><i class="fas fa-link"></i> Helpful Websites</a>
-                    <a href="#" class="resource-btn"><i class="fas fa-book"></i> My Bibliography</a>
-                </div>
-                
-                <p style="margin-top: 20px; font-size: 0.9rem;">(Note: These are example buttons for the project. In a real website, they would link to actual resources.)</p>
             </div>
         </section>
     </main>
